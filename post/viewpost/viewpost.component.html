@@ -1,0 +1,67 @@
+<!--
+
+<a (click) = "clickedPost()" class = "list-group-item list-group-item-action clearfix" [ngClass] = "{'hl':postInstance?.hl}" >
+    <div class>
+      <h5 class="list-group-item-header">{{postInstance!.title}}</h5> 
+      <div>
+        <span class="list-group-item-header">Created by: {{postInstance!.userId}}</span>
+        <br>
+        <span class="list-group-item-header">Created Date: {{postInstance!.createdDate}}</span>
+      </div>
+      <div class = "container-md">
+        <div>
+         <img src = {{postInstance?.headerImage}} width = '150'/>
+        </div>
+        <div>
+          <p appHldir >{{postInstance?.content}}</p> 
+        </div>
+      </div>
+    </div>
+  </a>
+-->
+ <div class ="container list-group-item list-group-item-action clearfix">
+
+<a (click) = "clickedPost()" >
+
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" [ngClass] = "{'hl':postInstance?.hl}"  data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        
+        <div class = 'container-md'>
+          <h1 class="list-group-item-header">{{postInstance!.title}}</h1> 
+          <div>
+            <h6 style = "font-family:courier,arial,helvetica;"><span class="list-group-item-header">Created by: {{postInstance!.userId}}</span></h6>
+            <h6 style = "font-family:courier,arial,helvetica;"><span class="list-group-item-header">Created Date: {{postInstance!.createdDate}}</span></h6>
+          </div>
+          </div>
+
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" [ngClass]="{'show':success}" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class = "container">
+          <div>
+           <img src = {{postInstance?.headerImage}} width = '150'/>
+          </div>
+          <div>
+            <p appHldir >{{postInstance?.content}}</p> 
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+</a>
+<div>
+<button *ngIf = 'checkUser()' class = 'btn btn-primary' (click) = (EditPost())>Edit Post</button> &nbsp;
+<button  *ngIf = 'checkUser()' (click) = (deletePost()) class = 'btn btn-warning fixed'>Delete Post</button>
+</div>
+
+
+
+</div>
+<br>

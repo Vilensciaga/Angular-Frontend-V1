@@ -1,0 +1,21 @@
+<div class = "container">
+    <div class="mb-3">
+        <label for="title" class="form-label">Post Title</label>
+        <input type="text" [(ngModel)]="title" class="form-control" id="title" placeholder="This is my posty post">
+      </div>
+      <div class="mb-3">
+        <label for="url" class="form-label">Header Image URL</label>
+        <input type="text" [(ngModel)]="headerImage" class="form-control" id="url" placeholder="https://myimage.com/img.png">
+      </div>
+      <div class="mb-3">
+        <label for="post" class="form-label">Post</label>
+        <textarea [(ngModel)]="content" class="form-control" id="post" rows="3"></textarea>
+      </div>
+      <div *ngIf = "message!==''" class="alert" [ngClass]="{'alert-danger':!success, 'alert-success':success}"  role="alert">
+        {{message}}
+      </div>
+      <div class="mb-3">
+        <button (click)="editPost()"  class="btn btn-primary">Submit</button>
+      </div>
+    
+    </div>
