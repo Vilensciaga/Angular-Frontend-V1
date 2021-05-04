@@ -1,0 +1,20 @@
+<div class="container">
+<div>
+</div>
+
+  <div class="row">
+    <div class="col-sm">
+     
+      
+      <ul class = 'list-group'>
+          <app-viewpost *ngFor="let b of postAry?.reverse()" [postInstance]="b" (postSelected) = "PostWasSelected($event)"></app-viewpost>
+      </ul>
+    </div>
+   
+  </div>
+</div>
+
+<div *ngIf="empty < 0">No Posts Found!</div>
+
+
+

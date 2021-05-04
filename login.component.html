@@ -1,0 +1,18 @@
+
+<div class="container-sm">
+  <div class="mb-3">
+    <label for="txtUsername" class="form-label">Username</label>
+    <input [(ngModel)]="userAuthInfo!.userName" type="text" class="form-control" id="txtUsername" placeholder="<JSmith>">
+  </div>
+  <div class="mb-3">
+    <label for="txtPassword" class="form-label">Password</label>
+    <input [(ngModel)]="userAuthInfo!.password" type="password" class="form-control" id="txtPassword" placeholder="<p4$$w0rd>">
+  </div>
+  <div *ngIf="message!==''" class="alert" [ngClass]="{'alert-danger':!success, 'alert-success':success}"  role="alert">
+    {{message}}
+  </div>
+
+  <div class="mb-3">
+    <button (click)="LoginUser()" class="btn btn-success">Login</button>
+  </div>
+</div>

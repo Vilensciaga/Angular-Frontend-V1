@@ -1,0 +1,29 @@
+
+<div class="container-sm">
+  <div class="mb-3">
+    <label for="txtFirstName" class="form-label">Fist Name</label>
+    <input [(ngModel)]="userInfo!.firstName" type="text" class="form-control" id="txtFirstName" placeholder="<John>">
+  </div>
+  <div class="mb-3">
+    <label for="txtLastName" class="form-label">Last Name</label>
+    <input [(ngModel)]="userInfo!.lastName" type="text" class="form-control" id="txtLastName" placeholder="<Smith>">
+  </div>
+  <div class="mb-3">
+    <label for="txtEmailAddress" class="form-label">Email Address</label>
+    <input [(ngModel)]="userInfo!.emailAddress" type="email" class="form-control" id="txtEmailAddress" placeholder="<John.Smith@domain.com>">
+  </div>
+  <div class="mb-3">
+    <label for="txtUserId" class="form-label">UserID</label>
+    <input [(ngModel)]="userInfo!.userId" type="text" class="form-control" id="txtUserId" placeholder="<JPSmith>">
+  </div>
+  <div class="mb-3">
+    <label for="txtPassword" class="form-label">Password</label>
+    <input [(ngModel)]="userInfo!.password" type="password" class="form-control" id="txtPassword" placeholder="">
+  </div>
+  <div *ngIf="message!==''" class="alert" [ngClass]="{'alert-danger':!success, 'alert-success':success}"  role="alert">
+    {{message}}
+  </div>
+  <div class="mb-3">
+    <button (click)="CreateUser()" class="btn btn-success">Create User</button>
+  </div>
+</div>
